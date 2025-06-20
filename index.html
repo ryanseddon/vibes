@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDM Drum Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>EDM Drum Machine</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="bpm">Tempo: <span id="bpm-value">120</span> BPM</label>
+                <input type="range" id="bpm" min="60" max="200" value="120">
+            </div>
+            <div class="control-group">
+                <label for="volume">Master Volume: <span id="volume-value">80</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="80">
+            </div>
+            <div class="control-group">
+                <button id="play-pause">Play</button>
+                <button id="clear">Clear</button>
+            </div>
+        </div>
+
+        <div class="sequencer">
+            <div class="track-labels">
+                <div class="track-label">Kick</div>
+                <div class="track-label">Snare</div>
+                <div class="track-label">Hihat</div>
+                <div class="track-label">Clap</div>
+                <div class="track-label">Tom</div>
+                <div class="track-label">Rim</div>
+                <div class="track-label">Crash</div>
+                <div class="track-label">Perc</div>
+            </div>
+            <div class="grid-container" id="grid-container"></div>
+        </div>
+        
+        <div class="drum-pads">
+            <div class="pad" data-sound="kick">KICK</div>
+            <div class="pad" data-sound="snare">SNARE</div>
+            <div class="pad" data-sound="hihat">HIHAT</div>
+            <div class="pad" data-sound="clap">CLAP</div>
+            <div class="pad" data-sound="tom">TOM</div>
+            <div class="pad" data-sound="rim">RIM</div>
+            <div class="pad" data-sound="crash">CRASH</div>
+            <div class="pad" data-sound="perc">PERC</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
