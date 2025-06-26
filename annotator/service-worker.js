@@ -1,10 +1,10 @@
-const CACHE_NAME = "image-annotator-v2";
+const CACHE_NAME = "image-annotator-v3";
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/styles.css",
-  "/script.js",
-  "/manifest.json",
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./script.js",
+  "./manifest.json",
 ];
 
 // Install event - cache resources
@@ -72,7 +72,7 @@ self.addEventListener("fetch", (event) => {
         .catch(() => {
           // Return a custom offline page or response
           if (event.request.destination === "document") {
-            return caches.match("/index.html");
+            return caches.match("./index.html");
           }
         });
     }),
@@ -98,8 +98,6 @@ self.addEventListener("push", (event) => {
     const data = event.data.json();
     const options = {
       body: data.body,
-      icon: "/icon-192.png",
-      badge: "/icon-72.png",
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
@@ -115,6 +113,6 @@ self.addEventListener("push", (event) => {
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
 
-  event.waitUntil(clients.openWindow("/"));
+  event.waitUntil(clients.openWindow("./"));
 });
 
