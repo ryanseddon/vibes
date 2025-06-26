@@ -149,6 +149,11 @@ h1 {
     position: relative;
 }
 
+/* Prevent SVG elements from blocking button clicks */
+.tool-btn svg, .action-btn svg, .history-btn svg, .install-btn svg {
+    pointer-events: none;
+}
+
 /* Icon-only tool buttons */
 .tool-btn {
     width: 40px;
@@ -157,6 +162,7 @@ h1 {
 
 .tool-btn svg {
     transition: all 0.15s ease;
+    pointer-events: none;
 }
 
 /* Tooltip styles */
